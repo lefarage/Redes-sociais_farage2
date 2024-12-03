@@ -4,9 +4,7 @@ async function visualizarDadosEscola() {
     const url = 'https://raw.githubusercontent.com/lefarage/Redes-sociais_farage2/refs/heads/main/graficos/informacoesalunos.json';
     const res = await fetch(url);
     const dados = await res.json();
-    if (!dados.redes_sociais) {
-        console.error("Erro: 'redes_sociais' não está definido no JSON.");
-        return;
+    
     }
     
     const redes = Object.keys(dados.redes_sociais);
@@ -26,6 +24,13 @@ async function visualizarDadosEscola() {
     container.innerHTML = '';
     container.appendChild(paragrafo);
 
+    if (!dados.redes_sociais) {
+        console.error("Erro: 'redes_sociais' não está definido no JSON.");
+        return;
+    }
+    
+    const redes = Object.keys(dados.redes_sociais);
+    const usuarios = Object.values(dados.redes_sociais);
     
 
     
