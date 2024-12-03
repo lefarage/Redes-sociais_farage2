@@ -5,12 +5,12 @@ async function quantidadeUsuariosPorRede() {
     const res = await fetch(url)
     const dados = await res.json()
     const nomeDasRedes = Object.keys(dados)
-    const quantidadeDeUsuarios = Object.values(dados)
+    const quantidadedeUsuarios = Object.values(dados)
 
     const data = [
         {
             x: nomeDasRedes, 
-            y: quantidadeDeUsuarios, 
+            y: quantidadedeUsuarios, 
             type: 'bar',
             marker: {
                 color: getCSS('--primary-color')
@@ -56,4 +56,4 @@ async function quantidadeUsuariosPorRede() {
     Plotly.newPlot(grafico, data, laytout)
 }
 
-quantidadeUsuariosPorRede()
+quantidadedeUsuariosPorRede()
