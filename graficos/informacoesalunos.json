@@ -2,5 +2,9 @@
     "totalalunos": 133,
     "conectados_tiktok": 6,
     "conectados_instagram": 73,
-    "tempo_medio_conectados": 7
+    "tempo_medio_conectados": 7,
+    "redes_sociais": {
+        "TikTok": 6,
+        "Instagram": 73
+    }
 }
