@@ -28,19 +28,20 @@ async function visualizarDadosEscola() {
         container.appendChild(paragrafo)
 
         
-        const redes = Object.keys(dados.redes_sociais)
-        const usuarios = Object.values(dados.redes_sociais)
+        if (dados.redes_sociais) {
+            const redes = Object.keys(dados.redes_sociais);
+            const usuarios = Object.values(dados.redes_sociais);
 
-        const data = [
-            {
-                x: redes,
-                y: usuarios,
-                type: 'bar',
-                marker: {
-                    color: getCSS('--secondary-color')
+            const data = [
+                {
+                    x: redes,
+                    y: usuarios,
+                    type: 'bar',
+                    marker: {
+                        color: getCSS('--secondary-color')
+                    }
                 }
-            }
-        ]
+            ]
 
         const layout = {
             plot_bgcolor: getCSS('--bg-color'),
