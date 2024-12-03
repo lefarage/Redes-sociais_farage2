@@ -1,7 +1,7 @@
 import { getCSS, tickConfig } from "./common.js";
 
 async function visualizarDadosEscola() {
-    const url = './dados/dados-escola.json';
+    const url = 'https://raw.githubusercontent.com/lefarage/Redes-sociais_farage2/refs/heads/main/graficos/informacoesalunos.json'
     const res = await fetch(url);
     const dados = await res.json();
 
@@ -9,12 +9,8 @@ async function visualizarDadosEscola() {
     const paragrafo = document.createElement('p');
     paragrafo.classList.add('graficos-container__texto');
     paragrafo.innerHTML = `
-        Nossa escola tem um total de <span>${dados.total_pessoas} pessoas</span>, 
-        incluindo <span>${dados.total_alunos} alunos</span> e 
-        <span>${dados.total_professores} professores</span>. 
-        Em média, as pessoas passam <span>${Math.floor(dados.tempo_medio)} horas e ${Math.round((dados.tempo_medio % 1) * 60)} minutos</span> conectadas nas redes sociais.
-        Isso representa <span>${dados.uso_porcentagem}%</span> de uso.
-    `;
+        Na escola Vinícius de Moraes a marior parte do corpo docente é formada por adolescentes ou pré-adolescentes. Uma pesquisa foi realizada para saber como esses adolescentes fazem o uso de redes sociais no seu dia a dia, contando com um total de <span>${totalalunos}</span> presentes na escola. A maior parte desse número, cerca de <span>${conectados_instagram}</span> faz uso do Instagram, ficando na rede por cerca de <span>${tempo_medio_conectados} horas. Isso representa quase 30% do dia desses adolescentes.`
+
 
     const container = document.getElementById('graficos-container');
     container.innerHTML = '';
