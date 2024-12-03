@@ -9,7 +9,8 @@ async function visualizarDadosEscola() {
     const paragrafo = document.createElement('p');
     paragrafo.classList.add('graficos-container__texto');
     paragrafo.innerHTML = `
-        Na escola Vinícius de Moraes a marior parte do corpo docente é formada por adolescentes ou pré-adolescentes. Uma pesquisa foi realizada para saber como esses adolescentes fazem o uso de redes sociais no seu dia a dia, contando com um total de <span>${totalalunos}</span> presentes na escola. A maior parte desse número, cerca de <span>${conectados_instagram}</span> faz uso do Instagram, ficando na rede por cerca de <span>${tempo_medio_conectados} horas. Isso representa quase 30% do dia desses adolescentes.`
+    Na escola Vinícius de Moraes a maior parte do corpo docente é formada por adolescentes ou pré-adolescentes. Uma pesquisa foi realizada para saber como esses adolescentes fazem o uso de redes sociais no seu dia a dia, contando com um total de <span>${dados.totalalunos}</span> presentes na escola. A maior parte desse número, cerca de <span>${dados.conectados_instagram}</span> faz uso do Instagram, ficando na rede por cerca de <span>${dados.tempo_medio_conectados}</span> horas. Isso representa quase 30% do dia desses adolescentes.`
+
 
 
     const container = document.getElementById('graficos-container');
@@ -17,8 +18,8 @@ async function visualizarDadosEscola() {
     container.appendChild(paragrafo);
 
     
-    const redes = Object.keys(dados.redes_sociais);
-    const usuarios = Object.values(dados.redes_sociais);
+    const redes = Object.keys(dados.informacoesalunos);
+    const usuarios = Object.values(dados.informacoesalunos);
 
     const data = [
         {
@@ -63,13 +64,13 @@ async function visualizarDadosEscola() {
         }
     };
 
-    const grafico = document.createElement('div');
-    grafico.className = 'grafico';
-    container.appendChild(grafico);
-    Plotly.newPlot(grafico, data, layout);
+    const grafico = document.createElement('div')
+    grafico.className = 'grafico'
+    container.appendChild(grafico)
+    Plotly.newPlot(grafico, data, layout)
 }
 
 document.getElementById('link-escola').addEventListener('click', (e) => {
-    e.preventDefault(); 
-    visualizarDadosEscola();
-});
+    e.preventDefault()
+    visualizarDadosEscola()
+})
