@@ -1,4 +1,5 @@
-import { getCSS, tickConfig } from "./common.js"
+import { getCSS, tickConfig } from "./common.js";
+
 
 async function quantidadeUsuariosPorRede() {
     const url = 'https://raw.githubusercontent.com/guilhermeonrails/api/main/numero-usuarios.json'
